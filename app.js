@@ -14,6 +14,7 @@ const categoryRoute = require('./routes/category');
 const orderRoute = require('./routes/order');
 const productRoute = require('./routes/product');
 const userRoute = require('./routes/user');
+const statusRoute = require('./routes/status');
 
 //app
 const app = express();
@@ -38,6 +39,7 @@ app.use(expressValidator());
 app.use(cors());
 
 // routes middleware
+app.use('/api', statusRoute);
 app.use('/api', authRoute);
 app.use('/api', braintreeRoute);
 app.use('/api', categoryRoute);
